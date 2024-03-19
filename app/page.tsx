@@ -1,8 +1,9 @@
 import { Carousel } from 'components/carousel';
-import { ThreeItemGrid } from 'components/grid/three-items';
-import Footer from 'components/layout/footer';
 import { Suspense } from 'react';
-
+import DetailsHero from '../components/Hero/detailsHero';
+import EmailModal from '../components/Hero/emailModal';
+import JewelleryHero from '../components/Hero/jewelleryHero';
+import VideoHero from '../components/Hero/videoHero';
 export const runtime = 'edge';
 
 export const metadata = {
@@ -15,12 +16,12 @@ export const metadata = {
 export default async function HomePage() {
   return (
     <>
-      <ThreeItemGrid />
+      <EmailModal />
+      <VideoHero />
+      <JewelleryHero />
+      <DetailsHero />
       <Suspense>
         <Carousel />
-        <Suspense>
-          <Footer />
-        </Suspense>
       </Suspense>
     </>
   );
