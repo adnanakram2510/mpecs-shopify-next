@@ -1,99 +1,58 @@
 'use client';
-
-import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
-import { GridTileImage } from 'components/grid/tile';
-import { createUrl } from 'lib/utils';
-import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname, useSearchParams } from 'next/navigation';
+import React from 'react';
+import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
 export function Gallery({ images }: { images: { src: string; altText: string }[] }) {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const imageSearchParam = searchParams?.get('image');
-  const imageIndex = imageSearchParam ? parseInt(imageSearchParam) : 0;
+  const [selectedImageIndex, setSelectedImageIndex] = React.useState(0);
+  const [loadTrigger, setLoadTrigger] = React.useState(false);
 
-  const nextSearchParams = new URLSearchParams(searchParams?.toString());
-  const nextImageIndex = imageIndex + 1 < images.length ? imageIndex + 1 : 0;
-  nextSearchParams.set('image', nextImageIndex.toString());
-  const nextUrl = createUrl(pathname || '', nextSearchParams);
+  const selectedImage = images[selectedImageIndex]?.src || 'https://placehold.co/600x600';
 
-  const previousSearchParams = new URLSearchParams(searchParams?.toString());
-  const previousImageIndex = imageIndex === 0 ? images.length - 1 : imageIndex - 1;
-  previousSearchParams.set('image', previousImageIndex.toString());
-  const previousUrl = createUrl(pathname || '', previousSearchParams);
+  const nextImage = () => {
+    setSelectedImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setLoadTrigger((prev) => !prev);
+  };
 
-  const buttonClassName =
-    'h-full px-6 transition-all ease-in-out hover:scale-110 hover:text-black dark:hover:text-white flex items-center justify-center';
+  const prevImage = () => {
+    setSelectedImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    setLoadTrigger((prev) => !prev);
+  };
+
+  const renderDots = () => {
+    return images.map((_, index) => (
+      <span
+        key={index}
+        className={`mx-1 inline-block h-3 w-3 rounded-full ${
+          selectedImageIndex === index ? 'bg-white' : 'border border-white'
+        }`}
+        onClick={() => setSelectedImageIndex(index)}
+      ></span>
+    ));
+  };
 
   return (
     <>
-      <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden">
-        {images[imageIndex] && (
-          <Image
-            className="h-full w-full object-contain"
-            fill
-            sizes="(min-width: 1024px) 66vw, 100vw"
-            alt={images[imageIndex]?.altText as string}
-            src={images[imageIndex]?.src as string}
-            priority={true}
-          />
-        )}
-
-        {images.length > 1 ? (
-          <div className="absolute bottom-[5%] flex w-full justify-center">
-            <div className="mx-auto flex h-11 items-center rounded-full border border-white bg-neutral-50/80 text-neutral-500 backdrop-blur dark:border-black dark:bg-neutral-900/80">
-              <Link
-                aria-label="Previous product image"
-                href={previousUrl}
-                className={buttonClassName}
-                scroll={false}
-              >
-                <ArrowLeftIcon className="h-5" />
-              </Link>
-              <div className="mx-1 h-6 w-px bg-neutral-500"></div>
-              <Link
-                aria-label="Next product image"
-                href={nextUrl}
-                className={buttonClassName}
-                scroll={false}
-              >
-                <ArrowRightIcon className="h-5" />
-              </Link>
-            </div>
-          </div>
-        ) : null}
+      <div className="relative flex items-center justify-center pt-16">
+        <button
+          onClick={prevImage}
+          className={`mx-3 text-white ${selectedImageIndex > 0 ? '' : 'invisible'}`}
+        >
+          <MdOutlineKeyboardArrowLeft className="mb-3 h-8 w-8 sm:mb-0" />
+        </button>
+        <img
+          key={selectedImageIndex}
+          src={selectedImage}
+          alt="Selected Image"
+          className="fade-in3 mb-8 h-72 w-72 object-contain md:h-[600px] md:w-[600px]"
+        />
+        <button
+          onClick={nextImage}
+          className={`mx-3 text-white ${selectedImageIndex < images.length - 1 ? '' : 'invisible'}`}
+        >
+          <MdOutlineKeyboardArrowRight className="mb-3 h-8 w-8 sm:mb-0" />
+        </button>
+        <div className="absolute bottom-0 mb-2 flex w-full justify-center">{renderDots()}</div>
       </div>
-
-      {images.length > 1 ? (
-        <ul className="my-12 flex items-center justify-center gap-2 overflow-auto py-1 lg:mb-0">
-          {images.map((image, index) => {
-            const isActive = index === imageIndex;
-            const imageSearchParams = new URLSearchParams(searchParams?.toString());
-
-            imageSearchParams.set('image', index.toString());
-
-            return (
-              <li key={image.src} className="h-20 w-20">
-                <Link
-                  aria-label="Enlarge product image"
-                  href={createUrl(pathname || '', imageSearchParams)}
-                  scroll={false}
-                  className="h-full w-full"
-                >
-                  <GridTileImage
-                    alt={image.altText}
-                    src={image.src}
-                    width={80}
-                    height={80}
-                    active={isActive}
-                  />
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      ) : null}
     </>
   );
 }
