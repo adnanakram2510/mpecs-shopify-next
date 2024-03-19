@@ -1,4 +1,4 @@
-const jewelleryHero = () => {
+const watchHero = () => {
   return (
     <div className="relative grid h-[30vh] grid-cols-1 md:h-screen md:grid-cols-2">
       <div className="h-full w-full bg-[url('/watch-strap-1.jpg')] bg-cover bg-left bg-no-repeat md:bg-left"></div>
@@ -19,4 +19,4 @@ const jewelleryHero = () => {
   );
 };
 
-export default jewelleryHero;
+export default watchHero;

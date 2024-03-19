@@ -65,9 +65,6 @@ export default function NavMenu() {
               <li className="text-gray-600 hover:underline">
                 <a href="javascript:void(0)">About us</a>
               </li>
-              <li className="text-gray-600 hover:underline">
-                <a href="javascript:void(0)">Cross Pendant</a>
-              </li>
             </ul>
           </div>
         </div>

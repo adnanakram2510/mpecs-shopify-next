@@ -19,7 +19,7 @@ const detailsHero = () => {
             Unique Craftmanship
           </h2>
           <p className="mb-6 flex justify-center text-lg font-light md:text-justify md:text-3xl">
-            We can count on over five years working experience and the highly specialised
+            We can count on over 4 decades working experience and the highly specialised
             craftmanship, this is why we are proud to have a highly efficient production rate which
             makes our straps amongst the best on the market for price to quality ratio.
             <br /> <br />
