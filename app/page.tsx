@@ -4,6 +4,7 @@ import DetailsHero from '../components/Hero/detailsHero';
 import EmailModal from '../components/Hero/emailModal';
 import JewelleryHero from '../components/Hero/jewelleryHero';
 import VideoHero from '../components/Hero/videoHero';
+import Footer from '../components/footer';
 export const runtime = 'edge';
 
 export const metadata = {
@@ -23,6 +24,7 @@ export default async function HomePage() {
       <Suspense>
         <Carousel />
       </Suspense>
+      <Footer />
     </>
   );
 }
