@@ -46,12 +46,12 @@ export function VariantSelector({
           const optionNameLowerCase = option.name.toLowerCase();
 
           // Base option params on current params so we can preserve any other param state in the url.
-          const optionSearchParams = new URLSearchParams(searchParams.toString());
+          const optionSearchParams = new URLSearchParams(searchParams?.toString());
 
           // Update the option params using the current option to reflect how the url *would* change,
           // if the option was clicked.
           optionSearchParams.set(optionNameLowerCase, value);
-          const optionUrl = createUrl(pathname, optionSearchParams);
+          const optionUrl = createUrl(pathname || '', optionSearchParams);
 
           // In order to determine if an option is available for sale, we need to:
           //
@@ -74,7 +74,7 @@ export function VariantSelector({
           );
 
           // The option is active if it's in the url params.
-          const isActive = searchParams.get(optionNameLowerCase) === value;
+          const isActive = searchParams?.get(optionNameLowerCase) === value;
 
           return (
             <button

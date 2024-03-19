@@ -79,6 +79,17 @@ body {
   }
 }
 
+@keyframes fadeIn4 {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .fade-in {
   animation: fadeIn 0.5s ease-out;
 }
@@ -89,6 +100,26 @@ body {
 
 .fade-in3 {
   animation: fadeIn3 0.5s ease-out;
+}
+
+.fade-in4 {
+  animation: fadeIn4 0.2s ease-out;
+}
+
+.fade-in41 {
+  animation: fadeIn4 0.5s ease-out;
+}
+
+.fade-in42 {
+  animation: fadeIn4 0.8s ease-out;
+}
+
+.fade-in43 {
+  animation: fadeIn4 1.1s ease-out;
+}
+
+.fade-in44 {
+  animation: fadeIn4 1.4s ease-out;
 }
 
 .about {
