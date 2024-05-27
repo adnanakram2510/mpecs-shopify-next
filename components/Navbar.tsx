@@ -15,7 +15,7 @@ const Navbar = () => {
       </div>
       <div className="flex flex-1 items-center justify-center">
         <a href="/">
-          <img src="./mpecs.png" className="mt-1 max-h-12 w-auto" />
+          <img src="/mpecs.png" className="mt-1 max-h-12 w-auto" />
         </a>
       </div>
       {/* <div className="hidden md:flex md:w-1/3">
