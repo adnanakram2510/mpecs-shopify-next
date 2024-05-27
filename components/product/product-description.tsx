@@ -24,7 +24,7 @@ export function ProductDescription({ product }: { product: Product }) {
   if (test) {
     return (
       <>
-        <div className="font-lato max-w-md pl-16 pr-16 md:pl-0 md:pr-24">
+        <div className="font-lato max-w-md pl-16 pr-16 md:mt-16 md:pl-0 md:pr-24">
           <h1 className="md:text-md mb-4 mt-[10px] text-sm font-extralight tracking-widest text-[#FFFFFF]">
             MPECS
           </h1>
