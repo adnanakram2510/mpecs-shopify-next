@@ -57,13 +57,13 @@ export default function NavMenu() {
           <div className={`mt-8 flex-1 justify-self-center pb-3 ${navbar ? 'block' : 'hidden'}`}>
             <ul className="items-center justify-center space-y-8">
               <li className="text-gray-600 hover:underline">
-                <a href="javascript:void(0)">Home</a>
+                <a href="/">Home</a>
               </li>
-              <li className="text-gray-600 hover:underline">
+              {/* <li className="text-gray-600 hover:underline">
                 <a href="javascript:void(0)">FAQ</a>
-              </li>
+              </li> */}
               <li className="text-gray-600 hover:underline">
-                <a href="javascript:void(0)">About us</a>
+                <a href="/about">About us</a>
               </li>
             </ul>
           </div>

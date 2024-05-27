@@ -24,6 +24,13 @@ function emailModal() {
     }
   };
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    console.log('Form submitted');
+    closeModal();
+  };
+
   return (
     <div
       id="modal-container"
@@ -44,12 +51,17 @@ function emailModal() {
         <h2 className="mb-2 text-4xl font-bold uppercase">MPECS</h2>
         <h3 className="mb-4 text-2xl">Hey There! </h3>
         <p className="mb-4">Sign up for news, events, and product announcements.</p>
-        <input
-          type="email"
-          placeholder="EMAIL"
-          className="mb-4 w-full border-2 border-gray-300 p-3"
-        />
-        <button className="w-full bg-gray-800 p-3 text-white">START YOUR JOURNEY</button>
+        <form onSubmit={handleSubmit}>
+          <input
+            required
+            type="email"
+            placeholder="EMAIL"
+            className="mb-4 w-full border-2 border-gray-300 p-3"
+          />
+          <button type="submit" className="w-full bg-gray-800 p-3 text-white">
+            START YOUR JOURNEY
+          </button>
+        </form>
       </div>
     </div>
   );

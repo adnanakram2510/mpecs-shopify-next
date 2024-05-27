@@ -1,5 +1,16 @@
+'use client';
 import Link from 'next/link';
+import { useState } from 'react';
+import { BsChevronRight } from 'react-icons/bs';
+
 const Footer = () => {
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setEmail('');
+    console.log('Email submitted:', email);
+  };
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="-mx-4 flex flex-wrap">
@@ -21,10 +32,10 @@ const Footer = () => {
         </div>
 
         <div className="mb-6 w-full px-4 md:mb-0 md:w-1/5">
-          <h3 className="mb-4 font-semibold">Support</h3>
+          <h3 className="mb-4 font-semibold">Social Media</h3>
           <ul>
-            <Link className="mb-2 hover:underline" href="/faq">
-              FAQ
+            <Link className="mb-2 hover:underline" href="https://facebook.com">
+              Facebook
             </Link>
           </ul>
         </div>
@@ -39,24 +50,34 @@ const Footer = () => {
         <div className="w-full px-4 text-white md:w-1/5">
           <h3 className="mb-4 font-semibold">Product News & Discounts</h3>
           <div className="mb-4 flex items-end">
-            <input
-              type="text"
-              placeholder="Enter your email here"
-              className="mr-2 w-4/5 border-b border-white bg-transparent py-2 text-white placeholder-white focus:outline-none"
-            />
-            <i className="fas fa-chevron-right text-black"></i>
+            <form onSubmit={handleSubmit} className="mb-4 flex items-end">
+              <input
+                required
+                type="email"
+                placeholder="Enter your email here"
+                className="w-5/5 mr-2 border-b border-white bg-transparent py-2 text-white placeholder-white focus:outline-none"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <button
+                type="submit"
+                className="flex items-center justify-center bg-transparent p-2 text-white hover:text-gray-300 focus:outline-none"
+              >
+                <BsChevronRight className="font-light" size="24" />
+              </button>
+            </form>
           </div>
         </div>
       </div>
       <div className="mt-8 flex flex-wrap items-center justify-between border-t border-white pt-4">
         <div className="text-sm">&copy;2024 MPECS</div>
         <div className="text-sm">
-          <a href="#" className="mr-4">
+          {/* <a href="#" className="mr-4">
             PRIVACY POLICY
           </a>
           <a href="#" className="mr-4">
             TERMS & CONDITIONS
-          </a>
+          </a> */}
           <a href="#" className="mr-4">
             mpecspl@gmail.com
           </a>
