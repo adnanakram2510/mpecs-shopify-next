@@ -119,10 +119,10 @@ export async function POST(req, res) {
           
         
         
-      <div class="u-row-container" style="padding: 0px;background-color: #f2f2f2">
+      <div class="u-row-container" style="padding: 0px;background-color: transparent">
         <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 500px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
           <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
-            <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #f2f2f2;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-color: transparent;"><![endif]-->
+            <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-color: transparent;"><![endif]-->
             
       <!--[if (mso)|(IE)]><td align="center" width="500" style="width: 500px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
       <div class="u-col u-col-100" style="max-width: 320px;min-width: 500px;display: table-cell;vertical-align: top;">
@@ -137,9 +137,9 @@ export async function POST(req, res) {
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td style="padding-right: 0px;padding-left: 0px;" align="center">
-            <a href="https://luxonse.com" target="_blank">
-            <img align="center" border="0" src="https://cdn.shopify.com/s/files/1/0694/1523/9895/files/LUXONSE-logo-_1.png?v=1714828840" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 20%;max-width: 96px;" width="96"/>
-            </a>
+            
+            <img align="center" border="0" src="https://cdn.shopify.com/s/files/1/0629/4732/8156/files/mpecs.png?v=1716894417" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 53%;max-width: 254.4px;" width="254.4"/>
+            
           </td>
         </tr>
       </table>
@@ -175,7 +175,7 @@ export async function POST(req, res) {
             <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
               
         <!--[if mso]><table width="100%"><tr><td><![endif]-->
-          <h1 style="margin: 0px; line-height: 140%; text-align: center; word-wrap: break-word; font-size: 26px; font-weight: 400;"><span><span><span>Welcome</span></span></span></h1>
+          <h1 style="margin: 0px; line-height: 140%; text-align: center; word-wrap: break-word; font-size: 22px; font-weight: 400;"><span>Welcome</span></h1>
         <!--[if mso]></td></tr></table><![endif]-->
       
             </td>
@@ -204,9 +204,9 @@ export async function POST(req, res) {
               
         <!--[if mso]><style>.v-button {background: transparent !important;}</style><![endif]-->
       <div align="center">
-        <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://luxonse.com/product/cross-pendant?discount=MEMBER20" style="height:37px; v-text-anchor:middle; width:145px;" arcsize="11%"  stroke="f" fillcolor="#000000"><w:anchorlock/><center style="color:#FFFFFF;"><![endif]-->
-          <a href="https://luxonse.com/product/cross-pendant?discount=MEMBER20" target="_blank" class="v-button" style="box-sizing: border-box;display: inline-block;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #000000; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;font-size: 14px;">
-            <span style="display:block;padding:10px 20px;line-height:120%;"><span style="line-height: 16.8px;">Shop Now - 20% off</span></span>
+        <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://mpecs-shopify-next.vercel.app/" style="height:37px; v-text-anchor:middle; width:217px;" arcsize="11%"  stroke="f" fillcolor="#1baff4"><w:anchorlock/><center style="color:#FFFFFF;"><![endif]-->
+          <a href="https://mpecs-shopify-next.vercel.app/" target="_blank" class="v-button" style="box-sizing: border-box;display: inline-block;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #1baff4; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;font-size: 14px;">
+            <span style="display:block;padding:10px 20px;line-height:120%;"><span style="line-height: 16.8px;">Discount Code: MEMBER20</span></span>
           </a>
           <!--[if mso]></center></v:roundrect><![endif]-->
       </div>
@@ -242,7 +242,7 @@ export async function POST(req, res) {
             <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
               
         <!--[if mso]><table width="100%"><tr><td><![endif]-->
-          <h1 style="margin: 0px; line-height: 140%; text-align: center; word-wrap: break-word; font-size: 26px; font-weight: 400;"><span><span>Best Sellers</span></span></h1>
+          <h1 style="margin: 0px; line-height: 140%; text-align: center; word-wrap: break-word; font-size: 22px; font-weight: 400;"><span>Best Sellers</span></h1>
         <!--[if mso]></td></tr></table><![endif]-->
       
             </td>
@@ -253,13 +253,13 @@ export async function POST(req, res) {
       <table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
         <tbody>
           <tr>
-            <td style="overflow-wrap:break-word;word-break:break-word;padding:0px;font-family:arial,helvetica,sans-serif;" align="left">
+            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
               
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td style="padding-right: 0px;padding-left: 0px;" align="center">
-            <a href="https://luxonse.com/product/cross-pendant?discount=MEMBER20" target="_blank">
-            <img align="center" border="0" src="https://cdn.shopify.com/s/files/1/0694/1523/9895/files/IMG_4156_02d29dda-37df-4a27-94de-42aba284d262.jpg?v=1714746647" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 40%;max-width: 200px;" width="200"/>
+            <a href="https://mpecs-shopify-next.vercel.app/product/silicone-straps" target="_blank">
+            <img align="center" border="0" src="https://cdn.shopify.com/s/files/1/0629/4732/8156/files/prod-4c.jpg?v=1710859920" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 49%;max-width: 235.2px;" width="235.2"/>
             </a>
           </td>
         </tr>
@@ -275,8 +275,8 @@ export async function POST(req, res) {
           <tr>
             <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
               
-        <div style="font-size: 16px; line-height: 140%; text-align: center; word-wrap: break-word;">
-          <p style="line-height: 140%;">Cross Perfume Pendant</p>
+        <div style="font-size: 14px; line-height: 140%; text-align: center; word-wrap: break-word;">
+          <p style="line-height: 140%;">Silicone Straps</p>
         </div>
       
             </td>
@@ -290,97 +290,7 @@ export async function POST(req, res) {
             <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
               
         <div style="font-size: 14px; line-height: 140%; text-align: center; word-wrap: break-word;">
-          <p style="line-height: 140%;"><span style="text-decoration: line-through; line-height: 19.6px;">$499.99</span> <strong>$249.99</strong></p>
-        </div>
-      
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      
-      <table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-        <tbody>
-          <tr>
-            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
-              
-        <div style="font-size: 14px; line-height: 140%; text-align: center; word-wrap: break-word;">
-          <p style="line-height: 140%;">Well what are you waiting for? Get in quick before they're all snapped up!</p>
-        </div>
-      
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      
-        <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
-        </div>
-      </div>
-      <!--[if (mso)|(IE)]></td><![endif]-->
-            <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
-          </div>
-        </div>
-        </div>
-        
-      
-      
-        
-        
-      <div class="u-row-container" style="padding: 0px;background-color: #000000">
-        <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 500px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
-          <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
-            <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #000000;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-color: transparent;"><![endif]-->
-            
-      <!--[if (mso)|(IE)]><td align="center" width="500" style="background-color: #000000;width: 500px;padding: 10px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
-      <div class="u-col u-col-100" style="max-width: 320px;min-width: 500px;display: table-cell;vertical-align: top;">
-        <div style="background-color: #000000;height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
-        <!--[if (!mso)&(!IE)]><!--><div style="box-sizing: border-box; height: 100%; padding: 10px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"><!--<![endif]-->
-        
-      <table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-        <tbody>
-          <tr>
-            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
-              
-        <div style="font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;">
-          <p style="line-height: 140%;"><span style="color: #ffffff; line-height: 19.6px;">Luxonse</span></p>
-      <p style="line-height: 140%;"><span style="color: #ffffff; line-height: 19.6px;">Jinnan 1-6-5</span></p>
-      <p style="line-height: 140%;"><span style="color: #ffffff; line-height: 19.6px;">Shibuya</span></p>
-      <p style="line-height: 140%;"><span style="color: #ffffff; line-height: 19.6px;">Tokyo</span></p>
-      <p style="line-height: 140%;"><span style="color: #ffffff; line-height: 19.6px;">Japan</span></p>
-      <p style="line-height: 140%;"><span style="color: #ffffff; line-height: 19.6px;">〒150-0041</span></p>
-        </div>
-      
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      
-      <table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-        <tbody>
-          <tr>
-            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
-              
-        <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-          <tbody>
-            <tr style="vertical-align: top">
-              <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-                <span>&#160;</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      
-      <table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-        <tbody>
-          <tr>
-            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px 17px 10px 10px;font-family:arial,helvetica,sans-serif;" align="left">
-              
-        <div style="font-size: 14px; line-height: 140%; text-align: right; word-wrap: break-word;">
-          <p style="line-height: 140%;"><span style="color: #ffffff; line-height: 19.6px;">@2024 Luxonse</span></p>
+          <p style="line-height: 140%;"><span style="line-height: 19.6px; color: #000000;"><span style="white-space: normal; float: none; display: inline; line-height: 19.6px;">₹290.00</span><span class="ml-1 inline" style="box-sizing: border-box; margin-left: 0.25rem; display: inline; white-space: normal; border: 0px solid #e5e7eb; line-height: 19.6px;">INR</span></span></p>
         </div>
       
             </td>
@@ -408,7 +318,8 @@ export async function POST(req, res) {
         <!--[if IE]></div><![endif]-->
       </body>
       
-      </html>`
+      </html>
+      `
     });
     console.log({ result });
     return new Response(JSON.stringify(customer), {
