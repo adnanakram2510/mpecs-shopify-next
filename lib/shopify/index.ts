@@ -1,4 +1,9 @@
-import { HIDDEN_PRODUCT_TAG, SHOPIFY_GRAPHQL_API_ENDPOINT, TAGS } from 'lib/constants';
+import {
+  HIDDEN_PRODUCT_TAG,
+  SHOPIFY_GRAPHQL_ADMIN_API_ENDPOINT,
+  SHOPIFY_GRAPHQL_API_ENDPOINT,
+  TAGS
+} from 'lib/constants';
 import { isShopifyError } from 'lib/type-guards';
 import { ensureStartsWith } from 'lib/utils';
 import { revalidateTag } from 'next/cache';
@@ -50,13 +55,94 @@ import {
   ShopifyUpdateCartOperation
 } from './types';
 
+import { createCustomerMutation } from './mutations/customer';
+
 const domain = process.env.SHOPIFY_STORE_DOMAIN
   ? ensureStartsWith(process.env.SHOPIFY_STORE_DOMAIN, 'https://')
   : '';
 const endpoint = `${domain}${SHOPIFY_GRAPHQL_API_ENDPOINT}`;
+const admin_endpoint = `${domain}${SHOPIFY_GRAPHQL_ADMIN_API_ENDPOINT}`;
+const admin_key = process.env.SHOPIFY_ADMIN_ACCESS_TOKEN!;
 const key = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN!;
 
 type ExtractVariables<T> = T extends { variables: object } ? T['variables'] : never;
+
+type CreateCustomerOperation = {
+  variables: {
+    input: {
+      email: string;
+      firstName?: string;
+      lastName?: string;
+      acceptsMarketing?: boolean;
+      addresses?: {
+        address1: string;
+        city: string;
+        province?: string;
+        phone?: string;
+        zip: string;
+        lastName?: string;
+        firstName?: string;
+        country: string;
+      }[];
+    };
+  };
+};
+
+export async function shopifyAdminFetch<T>({
+  cache = 'no-store',
+  headers,
+  query,
+  tags,
+  variables
+}: {
+  cache?: RequestCache;
+  headers?: HeadersInit;
+  query: string;
+  tags?: string[];
+  variables?: ExtractVariables<T>;
+}): Promise<{ status: number; body: T } | never> {
+  try {
+    const result = await fetch(admin_endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Shopify-Access-Token': admin_key,
+        ...headers
+      },
+      body: JSON.stringify({
+        ...(query && { query }),
+        ...(variables && { variables })
+      }),
+      cache,
+      ...(tags && { next: { tags } })
+    });
+
+    const body = await result.json();
+
+    if (body.errors) {
+      throw body.errors[0];
+    }
+
+    return {
+      status: result.status,
+      body
+    };
+  } catch (e) {
+    if (isShopifyError(e)) {
+      throw {
+        cause: e.cause?.toString() || 'unknown',
+        status: e.status || 500,
+        message: e.message,
+        query
+      };
+    }
+
+    throw {
+      error: e,
+      query
+    };
+  }
+}
 
 export async function shopifyFetch<T>({
   cache = 'force-cache',
@@ -447,4 +533,18 @@ export async function revalidate(req: NextRequest): Promise<NextResponse> {
   }
 
   return NextResponse.json({ status: 200, revalidated: true, now: Date.now() });
+}
+
+export async function createCustomer(input: {
+  email: string;
+  acceptsMarketing?: boolean;
+}): Promise<any> {
+  const variables = {
+    input
+  };
+  return shopifyAdminFetch<CreateCustomerOperation>({
+    query: createCustomerMutation,
+    variables,
+    cache: 'no-store'
+  });
 }

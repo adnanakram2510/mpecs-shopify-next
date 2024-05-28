@@ -1,15 +1,18 @@
 'use client';
+import { Lato } from 'next/font/google';
+import Link from 'next/link';
 import { useState } from 'react';
+
+const lato = Lato({
+  subsets: ['latin'],
+  weight: '400'
+});
 
 export default function NavMenu() {
   const [navbar, setNavbar] = useState(false);
-  function toggleNavbarContent() {
-    const navbarContent = document.getElementById('navbarContent');
-    if (navbarContent) {
-      navbarContent.style.display = navbarContent.style.display === 'none' ? '' : 'none';
-    }
-  }
-
+  const handleLinkClick = () => {
+    setNavbar(false);
+  };
   return (
     <nav className="w-full bg-white">
       <div className="font-lato mx-auto justify-start px-4">
@@ -54,16 +57,31 @@ export default function NavMenu() {
           </div>
         </div>
         <div>
-          <div className={`mt-8 flex-1 justify-self-center pb-3 ${navbar ? 'block' : 'hidden'}`}>
-            <ul className="items-center justify-center space-y-8">
+          <div
+            className={`absolute mt-8 flex-1 justify-self-center pb-3 ${
+              navbar ? 'block' : 'hidden'
+            } z-50`}
+          >
+            <ul className="items-center justify-center space-y-8 rounded-lg bg-white p-4 opacity-100 shadow-md">
               <li className="text-gray-600 hover:underline">
-                <a href="/">Home</a>
+                <Link href="/" onClick={handleLinkClick}>
+                  <span className={lato.className}>Home</span>
+                </Link>
               </li>
-              {/* <li className="text-gray-600 hover:underline">
-                <a href="javascript:void(0)">FAQ</a>
-              </li> */}
               <li className="text-gray-600 hover:underline">
-                <a href="/about">About us</a>
+                <Link href="/faq" onClick={handleLinkClick}>
+                  <span className={lato.className}>FAQ</span>
+                </Link>
+              </li>
+              <li className="text-gray-600 hover:underline">
+                <Link href="/about" onClick={handleLinkClick}>
+                  <span className={lato.className}>About</span>
+                </Link>
+              </li>
+              <li className="text-gray-600 hover:underline">
+                <Link href="/contact" onClick={handleLinkClick}>
+                  <span className={lato.className}>Contact</span>
+                </Link>
               </li>
             </ul>
           </div>

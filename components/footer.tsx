@@ -6,11 +6,28 @@ import { BsChevronRight } from 'react-icons/bs';
 const Footer = () => {
   const [email, setEmail] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setEmail('');
-    console.log('Email submitted:', email);
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    if (email) {
+      try {
+        const response = await fetch('/api/customer', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email: email })
+        });
+        const data = await response.json();
+      } catch (error) {
+        setEmail('');
+        console.error('Error:', error);
+      }
+    } else {
+      setEmail('');
+      console.error('Email is undefined or empty');
+    }
   };
+
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="-mx-4 flex flex-wrap">
@@ -32,10 +49,10 @@ const Footer = () => {
         </div>
 
         <div className="mb-6 w-full px-4 md:mb-0 md:w-1/5">
-          <h3 className="mb-4 font-semibold">Social Media</h3>
+          <h3 className="mb-4 font-semibold">Support</h3>
           <ul>
-            <Link className="mb-2 hover:underline" href="https://facebook.com">
-              Facebook
+            <Link className="mb-2 hover:underline" href="/contact">
+              Contact Us
             </Link>
           </ul>
         </div>
@@ -47,7 +64,7 @@ const Footer = () => {
             </Link>
           </ul>
         </div>
-        <div className="w-full px-4 text-white md:w-1/5">
+        <div className="-mt-1 w-full px-4 text-white md:w-1/5">
           <h3 className="mb-4 font-semibold">Product News & Discounts</h3>
           <div className="mb-4 flex items-end">
             <form onSubmit={handleSubmit} className="mb-4 flex items-end">
