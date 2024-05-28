@@ -8,7 +8,7 @@ import Footer from '../components/footer';
 export const runtime = 'edge';
 
 export const metadata = {
-  description: 'High-performance ecommerce store built with Next.js, Vercel, and Shopify.',
+  description: 'Welcome to MPECS! We sell leather products and watch straps.',
   openGraph: {
     type: 'website'
   }
