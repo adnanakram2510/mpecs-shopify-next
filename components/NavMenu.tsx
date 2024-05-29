@@ -69,11 +69,6 @@ export default function NavMenu() {
                 </Link>
               </li>
               <li className="text-gray-600 hover:underline">
-                <Link href="/faq" onClick={handleLinkClick}>
-                  <span className={lato.className}>FAQ</span>
-                </Link>
-              </li>
-              <li className="text-gray-600 hover:underline">
                 <Link href="/about" onClick={handleLinkClick}>
                   <span className={lato.className}>About</span>
                 </Link>
